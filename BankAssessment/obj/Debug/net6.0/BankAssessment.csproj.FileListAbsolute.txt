@@ -1,5 +1,0 @@
-C:\Users\evadi\source\repos\BankAssessment\BankAssessment\obj\Debug\net6.0\BankAssessment.csproj.AssemblyReference.cache
-C:\Users\evadi\source\repos\BankAssessment\BankAssessment\obj\Debug\net6.0\BankAssessment.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\evadi\source\repos\BankAssessment\BankAssessment\obj\Debug\net6.0\BankAssessment.AssemblyInfoInputs.cache
-C:\Users\evadi\source\repos\BankAssessment\BankAssessment\obj\Debug\net6.0\BankAssessment.AssemblyInfo.cs
-C:\Users\evadi\source\repos\BankAssessment\BankAssessment\obj\Debug\net6.0\BankAssessment.csproj.CoreCompileInputs.cache
