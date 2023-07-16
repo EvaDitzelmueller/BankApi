@@ -1,0 +1,15 @@
+C:\Users\evadi\source\repos\BankAssessment\BankAssessment\obj\Debug\net6.0\BankingSystemAPI.csproj.AssemblyReference.cache
+C:\Users\evadi\source\repos\BankAssessment\BankAssessment\obj\Debug\net6.0\BankingSystemAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\evadi\source\repos\BankAssessment\BankAssessment\obj\Debug\net6.0\BankingSystemAPI.AssemblyInfoInputs.cache
+C:\Users\evadi\source\repos\BankAssessment\BankAssessment\obj\Debug\net6.0\BankingSystemAPI.AssemblyInfo.cs
+C:\Users\evadi\source\repos\BankAssessment\BankAssessment\obj\Debug\net6.0\BankingSystemAPI.csproj.CoreCompileInputs.cache
+C:\Users\evadi\source\repos\BankAssessment\BankAssessment\bin\Debug\net6.0\BankingSystemAPI.exe
+C:\Users\evadi\source\repos\BankAssessment\BankAssessment\bin\Debug\net6.0\BankingSystemAPI.deps.json
+C:\Users\evadi\source\repos\BankAssessment\BankAssessment\bin\Debug\net6.0\BankingSystemAPI.runtimeconfig.json
+C:\Users\evadi\source\repos\BankAssessment\BankAssessment\bin\Debug\net6.0\BankingSystemAPI.dll
+C:\Users\evadi\source\repos\BankAssessment\BankAssessment\bin\Debug\net6.0\BankingSystemAPI.pdb
+C:\Users\evadi\source\repos\BankAssessment\BankAssessment\obj\Debug\net6.0\BankingSystemAPI.dll
+C:\Users\evadi\source\repos\BankAssessment\BankAssessment\obj\Debug\net6.0\refint\BankingSystemAPI.dll
+C:\Users\evadi\source\repos\BankAssessment\BankAssessment\obj\Debug\net6.0\BankingSystemAPI.pdb
+C:\Users\evadi\source\repos\BankAssessment\BankAssessment\obj\Debug\net6.0\BankingSystemAPI.genruntimeconfig.cache
+C:\Users\evadi\source\repos\BankAssessment\BankAssessment\obj\Debug\net6.0\ref\BankingSystemAPI.dll
