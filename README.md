@@ -3,7 +3,7 @@
 
 A small demo application that mimicks the workings of a bank. It is built with .NET 6 and .NET Core Web.
 
-The development process was based on TDD/BDD and DDD.
+The development process was based on TDD/BDD and loosely DDD.
 
 It covers the following use-cases: 
 - CRUD Users
