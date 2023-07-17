@@ -6,16 +6,22 @@ namespace BankingSystemAPI.Services
 {
     public class AccountService
     {
+        private readonly Database _database;
+
         //ideally account service should only contain business logic and there should be an account repository (in the persistance layer) that deals with database queries and related logic.
+        public AccountService(Database database)
+        {
+            _database = database;
+        }
         public Account CreateAccount(Guid customerId)
         {
             //this is obviously not optimal, given we ímplement "database" logic ideally we would want to split up the business logic from the persistance logic for example using a repository pattern.
-            foreach (var c in Database.CustomerDb)
+            foreach (var c in _database.CustomerDb)
             {
                 if (c.Id == customerId)
                 {
                     var account = new Account { CustomerId = customerId, AccountNumber = Guid.NewGuid(), Balance = 100 };
-                    Database.AccountDb.Add(account);
+                    _database.AccountDb.Add(account);
                     return account;
                 }
                 else
@@ -29,7 +35,7 @@ namespace BankingSystemAPI.Services
         public List<Guid> GetAccountNumberByCustomerId(Guid customerId)
         {
             var accounts = new List<Guid>();
-            foreach (var account in Database.AccountDb)
+            foreach (var account in _database.AccountDb)
             {
                 if (account.CustomerId == customerId)
                 {
@@ -42,7 +48,7 @@ namespace BankingSystemAPI.Services
         public List<Account> GetAccountsByCustomerId(Guid customerId)
         {
             var accounts = new List<Account>();
-            foreach (var account in Database.AccountDb)
+            foreach (var account in _database.AccountDb)
             {
                 if (account.CustomerId == customerId)
                 {
@@ -54,7 +60,7 @@ namespace BankingSystemAPI.Services
 
         public Account FindAccountByNumber(Guid accountNumber)
         {
-            foreach (var account in Database.AccountDb)
+            foreach (var account in _database.AccountDb)
             {
                 if (account.AccountNumber == accountNumber)
                 {
@@ -66,11 +72,11 @@ namespace BankingSystemAPI.Services
 
         public bool DeleteAccount(Guid accountNumber)
         {
-            foreach(var account in Database.AccountDb)
+            foreach(var account in _database.AccountDb)
             {
                 if (account.AccountNumber == accountNumber)
                 {
-                    Database.AccountDb.Remove(account);
+                    _database.AccountDb.Remove(account);
                     return true;
                 }
             }
@@ -79,7 +85,7 @@ namespace BankingSystemAPI.Services
 
         public bool DoesAccountExist(Guid accountNumber)
         {
-            foreach (var account in Database.AccountDb.ToList())
+            foreach (var account in _database.AccountDb.ToList())
             {
                 if (account.AccountNumber == accountNumber)
                 {
@@ -93,7 +99,7 @@ namespace BankingSystemAPI.Services
 
         public bool DepositToAccount(Guid accountNumber, decimal amount)
         {
-            foreach (var account in Database.AccountDb)
+            foreach (var account in _database.AccountDb)
             {
                 if (account.AccountNumber == accountNumber)
                 {
@@ -115,7 +121,7 @@ namespace BankingSystemAPI.Services
 
         public bool WithdrawFromAccount(Guid accountNumber, decimal amount)
         {
-            foreach (var account in Database.AccountDb)
+            foreach (var account in _database.AccountDb)
             {
                 if (account.AccountNumber == accountNumber)
                 {
@@ -139,7 +145,7 @@ namespace BankingSystemAPI.Services
 
         public decimal GetAccountBalance(Guid accountNumber)
         {
-            foreach(var account in Database.AccountDb)
+            foreach(var account in _database.AccountDb)
             {
                 if (account.AccountNumber == accountNumber)
                 {

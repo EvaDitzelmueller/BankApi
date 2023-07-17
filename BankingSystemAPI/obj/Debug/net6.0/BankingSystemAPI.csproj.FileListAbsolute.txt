@@ -5,7 +5,11 @@ C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\Ban
 C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\BankingSystemAPI.runtimeconfig.json
 C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\BankingSystemAPI.dll
 C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\BankingSystemAPI.pdb
+C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\System.Web.Http.dll
 C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -25,7 +29,3 @@ C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\obj\Debug\net6.0\ref
 C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\obj\Debug\net6.0\BankingSystemAPI.pdb
 C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\obj\Debug\net6.0\BankingSystemAPI.genruntimeconfig.cache
 C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\obj\Debug\net6.0\ref\BankingSystemAPI.dll
-C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\System.Net.Http.Formatting.dll
-C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\System.Web.Http.dll
-C:\Users\evadi\source\repos\BankAssessment\BankingSystemAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

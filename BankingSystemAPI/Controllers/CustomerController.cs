@@ -11,10 +11,10 @@ namespace BankingSystemAPI.Controllers
         private readonly ILogger<CustomerController> _logger;
         private readonly CustomerService _customerService;
 
-        public CustomerController(ILogger<CustomerController> logger, CustomerService _customerService)
+        public CustomerController(ILogger<CustomerController> logger, CustomerService customerService)
         {
             _logger = logger;
-            this._customerService = _customerService;
+            _customerService = customerService;
         }
 
         [Route("/customer/")]

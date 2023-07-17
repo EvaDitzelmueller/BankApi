@@ -16,13 +16,13 @@
 
     public class CustomerCreate
     {
-        private string v;
-
-        public CustomerCreate(string v)
+        public CustomerCreate()
         {
-            this.v = v;
         }
-
+        public CustomerCreate(string name)
+        {
+            Name = name;
+        }
         public string Name { get; set; }
     }
 }
