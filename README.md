@@ -8,3 +8,6 @@ This then also needs to be replaced inside the environment variables in the comp
 
       - ASPNETCORE_Kestrel__Certificates__Default__Password=<password> <- password goes here
 
+Then simply run
+
+docker compose up
