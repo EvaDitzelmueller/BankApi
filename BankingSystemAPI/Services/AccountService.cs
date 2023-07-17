@@ -6,9 +6,10 @@ namespace BankingSystemAPI.Services
 {
     public class AccountService
     {
-
+        //ideally account service should only contain business logic and there should be an account repository (in the persistance layer) that deals with database queries and related logic.
         public Account CreateAccount(Guid customerId)
         {
+            //this is obviously not optimal, given we ímplement "database" logic ideally we would want to split up the business logic from the persistance logic for example using a repository pattern.
             foreach (var c in Database.CustomerDb)
             {
                 if (c.Id == customerId)

@@ -1,6 +1,9 @@
 using BankingSystemAPI.Persistence;
 using BankingSystemAPI.Services;
 
+// This file is used to set up the application however it lacks many configuration settings, e.g. security measures, authorization and authentication and proper dependency injection on all layers
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 

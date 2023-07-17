@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "+M2Q19TO/J1tWtXdv93UdaWR4Dv3k5+7QqwitGyluWy8/dlvzxPxANNdgioHMj/juH5aDWvufpJqQ417Jp4+Lw==",
+  "dgSpecHash": "0Vb4wnKvBJAM0ebz9kDcGp12qKFAhgZ1K+WGJDmEzmmKdVu76nCYAYWcUQueDEKEM6FLmEk5Nn/fMAAarLzDSA==",
   "success": true,
   "projectFilePath": "C:\\Users\\evadi\\source\\repos\\BankAssessment\\TestProject1\\BankingSystemAPITests.cs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\evadi\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\evadi\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.9\\microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512",
     "C:\\Users\\evadi\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.9\\microsoft.aspnet.webapi.core.5.2.9.nupkg.sha512",
+    "C:\\Users\\evadi\\.nuget\\packages\\microsoft.aspnetcore.testhost\\6.0.20\\microsoft.aspnetcore.testhost.6.0.20.nupkg.sha512",
     "C:\\Users\\evadi\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",
     "C:\\Users\\evadi\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\evadi\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
@@ -65,6 +66,7 @@
     "C:\\Users\\evadi\\.nuget\\packages\\system.io.compression.zipfile\\4.3.0\\system.io.compression.zipfile.4.3.0.nupkg.sha512",
     "C:\\Users\\evadi\\.nuget\\packages\\system.io.filesystem\\4.3.0\\system.io.filesystem.4.3.0.nupkg.sha512",
     "C:\\Users\\evadi\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\evadi\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
     "C:\\Users\\evadi\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
     "C:\\Users\\evadi\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\evadi\\.nuget\\packages\\system.net.http\\4.3.0\\system.net.http.4.3.0.nupkg.sha512",

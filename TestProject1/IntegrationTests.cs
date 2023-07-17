@@ -2,10 +2,13 @@ using BankingSystemAPI.Domain;
 using BankingSystemAPI.Services;
 using Xunit;
 
+// these tests cover the basic required functionality.
+// However, due to the limitation of the database (static in memory data structures), these tests share some state, which is obviously not good and therefore only work if executed sequentally.
+// To do this properly, I would mock the external services (e.g. database,...) and only test the sut.
 public class BankingSystemTests
 {
-    private AccountService _accountService = new AccountService();
-    private CustomerService _customerService = new CustomerService();
+    AccountService _accountService = new AccountService();
+    CustomerService _customerService = new CustomerService();
     private const decimal accountCreationBonus = 100;
 
     [Fact]
@@ -13,11 +16,10 @@ public class BankingSystemTests
     {
         // Arrange
 
-        Customer customer = new Customer(123,"John Doe");
-        _customerService.CreateCustomer(customer);
+        var customer = _customerService.CreateCustomer(new CustomerCreate("John Doe"));
 
         // Act
-        var account = _accountService.CreateAccount(customer);
+        var account = _accountService.CreateAccount(customer.Id);
 
         // Assert
         Assert.True(_accountService.DoesAccountExist(account.AccountNumber));
@@ -27,11 +29,11 @@ public class BankingSystemTests
     public void SameUserCanOpenMultipleAccounts()
     {
         // Arrange
-        Customer customer = new Customer(123, "John Doe");
+        var customer = _customerService.CreateCustomer(new CustomerCreate("Aida Bugg"));
 
         // Act
-        var account = _accountService.CreateAccount(customer);
-        var account2 = _accountService.CreateAccount(customer);
+        var account = _accountService.CreateAccount(customer.Id);
+        var account2 = _accountService.CreateAccount(customer.Id);
 
         // Assert
         int expectedNumberOfAccounts = 2;
@@ -51,8 +53,8 @@ public class BankingSystemTests
     public void UserCanDeleteAccount()
     {
         // Arrange
-        Customer customer = new Customer(123, "John Doe");
-        var account = _accountService.CreateAccount(customer);
+        var customer = _customerService.CreateCustomer(new CustomerCreate("Hugo First"));
+        var account = _accountService.CreateAccount(customer.Id);
 
         // Act
         _accountService.DeleteAccount(account.AccountNumber);
@@ -65,8 +67,8 @@ public class BankingSystemTests
     public void UserCanDepositToAccount()
     {
         // Arrange
-        Customer customer = new Customer(123, "John Doe");
-        var account = _accountService.CreateAccount(customer);
+        var customer = _customerService.CreateCustomer(new CustomerCreate("Max Mustermann"));
+        var account = _accountService.CreateAccount(customer.Id);
         decimal depositAmount = 200;
 
         // Act
@@ -82,8 +84,8 @@ public class BankingSystemTests
     public void UserCanWithdrawFromAccount()
     {
         // Arrange
-        Customer customer = new Customer(123, "John Doe");
-        var account = _accountService.CreateAccount(customer);
+        var customer = _customerService.CreateCustomer(new CustomerCreate("Polly Pipe"));
+        var account = _accountService.CreateAccount(customer.Id);
         decimal depositAmount = 200;
         decimal withdrawAmount = 100;
         _accountService.DepositToAccount(account.AccountNumber, depositAmount);
@@ -101,8 +103,8 @@ public class BankingSystemTests
     public void UserCannotWithdrawBelowMinimumBalance()
     {
         // Arrange
-        Customer customer = new Customer(123, "John Doe");
-        var account = _accountService.CreateAccount(customer);
+        var customer = _customerService.CreateCustomer(new CustomerCreate("Abby Normal"));
+        var account = _accountService.CreateAccount(customer.Id);
         decimal withdrawAmount = 1; // this should not be possible, because minimum amount is 100
 
         // Act & Assert
@@ -119,8 +121,8 @@ public class BankingSystemTests
     public void UserCannotWithdrawExcessiveAmount()
     {
         // Arrange
-        Customer customer = new Customer(123, "John Doe");
-        var account = _accountService.CreateAccount(customer);
+        var customer = _customerService.CreateCustomer(new CustomerCreate("Simon Sais"));
+        var account = _accountService.CreateAccount(customer.Id);
         decimal depositAmount = 9900;
         decimal withdrawAmount = (accountCreationBonus + depositAmount) * 0.95m; // 95% of total balance
         _accountService.DepositToAccount(account.AccountNumber, depositAmount);
@@ -138,8 +140,8 @@ public class BankingSystemTests
     public void UserCannotDepositExcessiveAmount()
     {
         // Arrange
-        Customer customer = new Customer(123, "John Doe");
-        var account = _accountService.CreateAccount(customer);
+        var customer = _customerService.CreateCustomer(new CustomerCreate("Theresa Green"));
+        var account = _accountService.CreateAccount(customer.Id);
         decimal depositAmount = 10001; // $10,001
 
 

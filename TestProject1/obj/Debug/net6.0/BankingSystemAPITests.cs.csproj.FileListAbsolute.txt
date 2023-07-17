@@ -112,3 +112,5 @@ C:\Users\evadi\source\repos\BankAssessment\TestProject1\bin\Debug\net6.0\Swashbu
 C:\Users\evadi\source\repos\BankAssessment\TestProject1\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\evadi\source\repos\BankAssessment\TestProject1\bin\Debug\net6.0\BankingSystemAPI.dll
 C:\Users\evadi\source\repos\BankAssessment\TestProject1\bin\Debug\net6.0\BankingSystemAPI.pdb
+C:\Users\evadi\source\repos\BankAssessment\TestProject1\bin\Debug\net6.0\Microsoft.AspNetCore.TestHost.dll
+C:\Users\evadi\source\repos\BankAssessment\TestProject1\bin\Debug\net6.0\System.IO.Pipelines.dll

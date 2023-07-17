@@ -46,11 +46,13 @@ namespace BankingSystemAPI.Controllers
 
         [Route("/accounts/{accountNumber}")]
         [HttpDelete]
-        public bool Deposit(Guid accountNumber)
+        public bool DeleteAccount(Guid accountNumber)
         {
             return _accountService.DeleteAccount(accountNumber);
         }
 
+        // This route should be refactored to work with transactions in the future
+        // There should not be the need to distinquish between deposit and withdrawal, they could be unified in a transaction data model
         [Route("/accounts/{accountNumber}/deposit")]
         [HttpPut]
         public bool Deposit(Guid accountNumber, Transcation transaction)
