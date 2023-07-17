@@ -6,12 +6,7 @@ namespace BankingSystemAPI.Services
 {
     public class AccountService
     {
-        //private readonly Dictionary<string, List<Account>> accounts;
 
-        //public AccountService()
-        //{
-        //    accounts = new Dictionary<string, List<Account>>();
-        //}
         public Account CreateAccount(Customer customer)
         {
             var account = new Account { CustomerId = customer.Id, AccountNumber = Guid.NewGuid(), Balance = 100 };
@@ -44,28 +39,19 @@ namespace BankingSystemAPI.Services
                 }
             }
             return accounts;
-
-            //dont need this anymore????
-            //if (Database.AccountDb.TryGetValue(username, out List<Account> userAccounts))
-            //{
-            //    return userAccounts;
-            //}
-            //else
-            //{
-            //    return new List<Account>(); // Return an empty list if the user has no accounts
-            //}
         }
 
-        public void DeleteAccount(Guid accountNumber)
+        public bool DeleteAccount(Guid accountNumber)
         {
             foreach(var account in Database.AccountDb)
             {
                 if (account.AccountNumber == accountNumber)
                 {
                     Database.AccountDb.Remove(account);
-                    break;
+                    return true;
                 }
             }
+            return false;
         }
 
         public bool DoesAccountExist(Guid accountNumber)
@@ -102,27 +88,6 @@ namespace BankingSystemAPI.Services
                 }
             }
             return false;
-
-
-            //if(Database.AccountDb.Find(accountNumber)
-            //{
-
-            //}
-            //if (accounts.ContainsKey(username))
-            //{
-            //    List<Account> userAccounts = accounts[username];
-            //    decimal maximumDepositAmount = 10000; // Maximum deposit amount allowed
-
-            //    if (amount <= maximumDepositAmount)
-            //    {
-            //        Account account = userAccounts[0]; // Assuming the first account in the list
-            //        account.Balance += amount;
-            //    }
-            //    else
-            //    {
-            //        throw new InvalidOperationException("Exceeded maximum deposit amount");
-            //    }
-            //}
         }
 
         public bool WithdrawFromAccount(Guid accountNumber, decimal amount)
@@ -145,24 +110,6 @@ namespace BankingSystemAPI.Services
                 }
             }
             return false;
-
-
-
-            //        if (accounts.ContainsKey(username))
-            //{
-            //    List<Account> userAccounts = accounts[username];
-            //    decimal maximumWithdrawalAmount = userAccounts[0].Balance * 0.9m; // 90% of total balance
-
-            //    if (userAccounts.Count > 0 && userAccounts[0].Balance - amount >= 100 && amount <= maximumWithdrawalAmount)
-            //    {
-            //        Account account = userAccounts[0]; // Assuming the first account in the list
-            //        account.Balance -= amount;
-            //    }
-            //    else
-            //    {
-            //        throw new InvalidOperationException("Invalid withdrawal amount");
-            //    }
-            //}
         }
 
 
@@ -177,20 +124,6 @@ namespace BankingSystemAPI.Services
                 }
             }
             return 0;
-
-
-            //old implementation
-            //if (accounts.ContainsKey(username))
-            //{
-            //    List<Account> userAccounts = accounts[username];
-            //    if (userAccounts.Count > 0)
-            //    {
-            //        Account account = userAccounts[0]; // Assuming the first account in the list
-            //        return account.Balance;
-            //    }
-            //}
-
-            //return 0;
         }
 
     }

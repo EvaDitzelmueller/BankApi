@@ -32,6 +32,13 @@ namespace BankingSystemAPI.Controllers
             return _accountService.GetAccountsByCustomerId(customerId);
         }
 
+        [Route("/accounts/{accountNumber}")]
+        [HttpDelete]
+        public bool Deposit(Guid accountNumber)
+        {
+            return _accountService.DeleteAccount(accountNumber);
+        }
+
         [Route("/accounts/{accountNumber}/deposit")]
         [HttpPut]
         public bool Deposit(Guid accountNumber, Transcation transaction)
@@ -45,5 +52,7 @@ namespace BankingSystemAPI.Controllers
         {
             return _accountService.WithdrawFromAccount(accountNumber, transaction.Amount);
         }
+
+
     }
 }
