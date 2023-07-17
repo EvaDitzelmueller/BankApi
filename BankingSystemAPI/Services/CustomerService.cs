@@ -6,7 +6,7 @@ namespace BankingSystemAPI.Services
     public class CustomerService
     {
 
-        public Customer FindCustomerById(int id)
+        public Customer FindCustomerById(Guid id)
         {
             foreach (var customer in Database.CustomerDb)
             {
@@ -24,10 +24,11 @@ namespace BankingSystemAPI.Services
             return Database.CustomerDb;
         }
 
-        public Customer CreateCustomer(Customer customer)
+        public Customer CreateCustomer(CustomerCreate customer)
         {
-            Database.CustomerDb.Add(customer);
-            return customer;
+            var c = new Customer ( Guid.NewGuid(), customer.Name );
+            Database.CustomerDb.Add(c);
+            return c;
         }
     }
 }

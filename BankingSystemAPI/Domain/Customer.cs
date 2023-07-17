@@ -3,13 +3,18 @@
     public class Customer
     {
 
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
 
-        public Customer(int Id, string Name)
+        public Customer(Guid Id, string Name)
         {
             this.Id = Id;
             this.Name = Name;
         }
+    }
+
+    public class CustomerCreate
+    {
+        public string Name { get; set; }
     }
 }

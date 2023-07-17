@@ -7,20 +7,30 @@ namespace BankingSystemAPI.Services
     public class AccountService
     {
 
-        public Account CreateAccount(Customer customer)
+        public Account CreateAccount(Guid customerId)
         {
-            var account = new Account { CustomerId = customer.Id, AccountNumber = Guid.NewGuid(), Balance = 100 };
-            Database.AccountDb.Add(account);
-            return account;
-
+            foreach (var c in Database.CustomerDb)
+            {
+                if (c.Id == customerId)
+                {
+                    var account = new Account { CustomerId = customerId, AccountNumber = Guid.NewGuid(), Balance = 100 };
+                    Database.AccountDb.Add(account);
+                    return account;
+                }
+                else
+                {
+                    throw new InvalidOperationException("the customer does not exist");
+                }
+            }
+            return null;
         }
 
-        public List<Guid> GetAccountNumberByCustomerId(int id)
+        public List<Guid> GetAccountNumberByCustomerId(Guid customerId)
         {
             var accounts = new List<Guid>();
             foreach (var account in Database.AccountDb)
             {
-                if (account.CustomerId == id)
+                if (account.CustomerId == customerId)
                 {
                     accounts.Add(account.AccountNumber);
                 }
@@ -28,7 +38,7 @@ namespace BankingSystemAPI.Services
             return accounts;
         }
 
-        public List<Account> GetAccountsByCustomerId(int customerId)
+        public List<Account> GetAccountsByCustomerId(Guid customerId)
         {
             var accounts = new List<Account>();
             foreach (var account in Database.AccountDb)
@@ -39,6 +49,18 @@ namespace BankingSystemAPI.Services
                 }
             }
             return accounts;
+        }
+
+        public Account FindAccountByNumber(Guid accountNumber)
+        {
+            foreach (var account in Database.AccountDb)
+            {
+                if (account.AccountNumber == accountNumber)
+                {
+                    return account;
+                }
+            }
+            return null;
         }
 
         public bool DeleteAccount(Guid accountNumber)

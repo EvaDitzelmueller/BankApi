@@ -17,9 +17,16 @@ namespace BankingSystemAPI.Controllers
             this._customerService = _customerService;
         }
 
-        [Route("/users/{id}")]
+        [Route("/customer/")]
+        [HttpPost]
+        public Customer Post(CustomerCreate customer)
+        {
+            return _customerService.CreateCustomer(customer);
+        }
+
+        [Route("/customer/{id}")]
         [HttpGet]
-        public ActionResult<Customer> GetById(int id)
+        public ActionResult<Customer> GetById(Guid id)
         {
             var customer = _customerService.FindCustomerById(id);
 
@@ -29,18 +36,11 @@ namespace BankingSystemAPI.Controllers
             return Ok(customer);
         }
 
-        [Route("/users/")]
+        [Route("/customer/")]
         [HttpGet]
         public IEnumerable<Customer> GetAll()
         {
             return _customerService.FindAll();
-        }
-
-        [Route("/users/")]
-        [HttpPost]
-        public Customer Post(Customer customer)
-        {
-            return _customerService.CreateCustomer(customer);
         }
 
     }

@@ -20,16 +20,28 @@ namespace BankingSystemAPI.Controllers
 
         [Route("/accounts/")]
         [HttpPost]
-        public Account Post(Customer customer)
+        public Account Post(Guid customerId)
         {
-            return _accountService.CreateAccount(customer);
+            return _accountService.CreateAccount(customerId);
         }
 
         [Route("/customer/{customerId}/accounts")]
         [HttpGet]
-        public IEnumerable<Account> GetAll(int customerId)
+        public IEnumerable<Account> GetAll(Guid customerId)
         {
             return _accountService.GetAccountsByCustomerId(customerId);
+        }
+
+        [Route("/accounts/{accountNumber}")]
+        [HttpGet]
+        public ActionResult<Account> GetByAccountNumber(Guid accountNumber)
+        {
+            var account = _accountService.FindAccountByNumber(accountNumber);
+
+            if (account == null)
+                return NotFound();
+
+            return Ok(account);
         }
 
         [Route("/accounts/{accountNumber}")]
