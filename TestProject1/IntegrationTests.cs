@@ -29,7 +29,6 @@ namespace BankingSystemAPITests.cs
         {
             // Act
             var response = await _client.GetAsync("/");
-            ;
             // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }

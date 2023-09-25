@@ -1,3 +1,4 @@
+using BankingSystemAPI.Domain;
 using BankingSystemAPI.Persistence;
 using BankingSystemAPI.Services;
 
@@ -11,13 +12,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddSingleton<Database>();
+// Add Automapper
 builder.Services.AddScoped<CustomerService>();
 builder.Services.AddScoped<AccountService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddSingleton<IDatabase, Database>();
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
